@@ -1,9 +1,9 @@
 ---
-name: fliggy-code-review-v2
-description: 当用户要求 review / 审查 / CR 飞猪多端代码（Flutter / iOS / Android / HarmonyOS），检查 diff / PR 质量时使用。
+name: flutter-code-review
+description: 当用户要求 review / 审查 / CR 多端代码（Flutter / iOS / Android / HarmonyOS），检查 diff / PR 质量时使用。
 ---
 
-# Fliggy 多端 Code Review V2
+# 多端 Code Review V2
 
 > **架构定位**：本文档是**纯流程框架** —— 5 维度 + 假阳性过滤 + 可信度检测 + TASK 链。**任何平台特定规则（包括 Flutter）都不在主文档**，一律走 `references/{platform}.md`。
 
@@ -106,7 +106,7 @@ description: 当用户要求 review / 审查 / CR 飞猪多端代码（Flutter /
 - [ ] **命名**：遵循该语言官方规范
 - [ ] **代码卫生**：无调试残留（日志散落 / 私人备忘 / 未使用 import / 死代码）；格式化工具运行无差异
 
-> ⚠️ 上面 3 条只是跨平台骨架。**必须**同时执行 `references/{platform}.md` 的 D4 节完整 checklist（含语言习惯、反模式、Widget/类组织、生命周期接缝、性能 const、`GlobalKey`/异常上报等飞猪硬规范）。命中条目在报告里引用 references 行号或条目名；未引规范 = 漏报。
+> ⚠️ 上面 3 条只是跨平台骨架。**必须**同时执行 `references/{platform}.md` 的 D4 节完整 checklist（含语言习惯、反模式、Widget/类组织、生命周期接缝、性能 const、`GlobalKey`/异常上报等平台硬规范）。命中条目在报告里引用 references 行号或条目名；未引规范 = 漏报。
 
 ### D5 · 非功能点 Checklist
 
@@ -162,7 +162,7 @@ description: 当用户要求 review / 审查 / CR 飞猪多端代码（Flutter /
 ### 4.1 报告骨架
 
 ```markdown
-# 🔍 飞猪多端代码审查报告 V2
+# 🔍 多端代码审查报告 V2
 
 ## ❌ 问题详情
 

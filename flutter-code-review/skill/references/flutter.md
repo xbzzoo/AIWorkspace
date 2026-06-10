@@ -1,6 +1,6 @@
 # Flutter 平台规则包
 
-> 配合 `fliggy_code_review_v2` 主 SKILL.md 使用。
+> 配合 `flutter-code-review` 主 SKILL.md 使用。
 
 ## D4 · 编程规范 Checklist（Flutter）
 
