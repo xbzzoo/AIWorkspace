@@ -21,5 +21,6 @@ AIWorkspace/
 | --- | --- | --- |
 | [`claude-trace/`](./claude-trace) | 研究 / 文档 | 用 claude-trace 抓包，逐层拆解 Claude Code 一次 skill 调用在 HTTP 层做了什么 |
 | [`claude-console/`](./claude-console) | 工具 / 应用 | 本地只读、实时刷新的 `~/.claude` 控制台（FastAPI + 零依赖前端） |
+| [`flutter-code-review/`](./flutter-code-review) | 工具 + 研究 / 文档 | 飞猪多端 CR skill（`fliggy-code-review-v2`）+ 它与 ATA 文章《8行代码21问题》方法论的逐条对照分析 |
 
 <!-- 后续项目按上表追加 -->
