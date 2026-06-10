@@ -1,0 +1,17 @@
+# macOS
+.DS_Store
+
+# Editor / IDE
+.idea/
+.vscode/
+*.swp
+
+# Python (for future projects)
+__pycache__/
+*.pyc
+.pytest_cache/
+.venv/
+venv/
+
+# Node (for future projects)
+node_modules/
