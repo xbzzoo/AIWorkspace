@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="color-scheme" content="dark light" />
+  <title>Claude Console</title>
+  <!-- Apply the saved theme before first paint to avoid a flash. -->
+  <script>
+    try {
+      var t = localStorage.getItem("cc-theme") || "dark";
+      document.documentElement.setAttribute("data-theme", t === "light" ? "light" : "dark");
+    } catch (e) { document.documentElement.setAttribute("data-theme", "dark"); }
+  </script>
+  <link rel="stylesheet" href="/style.css" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Ctext y='26' font-size='26'%3E%E2%8C%81%3C/text%3E%3C/svg%3E" />
+</head>
+<body>
+  <div id="app">
+    <!-- ───────────── Sidebar ───────────── -->
+    <aside id="sidebar">
+      <div class="brand">
+        <span class="brand-mark">⌁</span>
+        <span class="brand-name">Claude Console</span>
+        <button id="theme-toggle" class="theme-toggle" type="button" title="切换 正常/夜间 模式" aria-label="toggle theme">☀</button>
+      </div>
+
+      <div class="conn">
+        <span id="conn-dot" class="dot" title="disconnected"></span>
+        <span id="conn-label" class="conn-label">connecting…</span>
+      </div>
+
+      <nav id="nav"><!-- nav items injected by app.js --></nav>
+
+      <button id="reload-all" class="reload-all" type="button">⟳ Reload all</button>
+
+      <div class="side-foot mono">read-only · 127.0.0.1</div>
+    </aside>
+
+    <!-- ───────────── Main ───────────── -->
+    <main id="main">
+      <header id="main-header">
+        <div class="head-text">
+          <h1 id="page-title">Overview</h1>
+          <p id="page-subtitle" class="subtitle">Loading…</p>
+        </div>
+        <div class="head-actions">
+          <span id="last-updated" class="last-updated mono"></span>
+          <button id="refresh-btn" class="refresh-btn" type="button">⟳ Refresh</button>
+        </div>
+      </header>
+
+      <section id="content" class="content"><!-- domain content --></section>
+    </main>
+  </div>
+
+  <!-- ───────────── Live activity strip ───────────── -->
+  <div id="activity" class="activity collapsed">
+    <div class="activity-bar" id="activity-bar">
+      <span class="activity-title">Live activity</span>
+      <span id="activity-count" class="activity-count mono">0</span>
+      <span class="activity-toggle" id="activity-toggle">▴</span>
+    </div>
+    <div id="activity-feed" class="activity-feed mono"><!-- rows --></div>
+  </div>
+
+  <!-- ───────────── Transcript drawer ───────────── -->
+  <div id="drawer-backdrop" class="drawer-backdrop hidden"></div>
+  <aside id="drawer" class="drawer hidden" aria-hidden="true">
+    <div class="drawer-head">
+      <div class="drawer-titles">
+        <div id="drawer-title" class="drawer-title mono"></div>
+        <div id="drawer-sub" class="drawer-sub mono"></div>
+      </div>
+      <div class="drawer-actions">
+        <button id="drawer-refresh" class="drawer-refresh hidden" type="button"
+                title="刷新（重新读取最新内容，含 jsonl 追加）">⟳</button>
+        <button id="drawer-share" class="drawer-share hidden" type="button"
+                title="Save a long screenshot (PNG) of this conversation">📷 截图</button>
+        <button id="drawer-close" class="drawer-close" type="button">✕</button>
+      </div>
+    </div>
+    <div id="drawer-body" class="drawer-body"></div>
+  </aside>
+
+  <script src="/app.js"></script>
+</body>
+</html>
